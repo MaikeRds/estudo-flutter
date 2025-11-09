@@ -6,6 +6,7 @@ class CustomTile extends StatelessWidget {
   final Widget title;
   final Widget subtitle;
   final Widget trailing;
+  final void Function() onTap;
 
   const CustomTile({
     super.key,
@@ -14,40 +15,46 @@ class CustomTile extends StatelessWidget {
     required this.title,
     required this.subtitle,
     required this.trailing,
+    required this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
     final gap = SizedBox(height: 8, width: 16);
-    return Container(
-      padding: EdgeInsets.all(8),
-      margin: EdgeInsets.all(2),
-      decoration: BoxDecoration(
-        color: color,
-        borderRadius: BorderRadius.circular(8),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              leading,
-              gap,
-              Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [title, subtitle],
-              ),
-            ],
-          ),
-          Column(
-            children: [
-              trailing,
-            ],
-          ),
-        ],
+    return InkWell(
+      onTap: () {
+        onTap();
+      },
+      child: Container(
+        padding: EdgeInsets.all(8),
+        margin: EdgeInsets.all(2),
+        decoration: BoxDecoration(
+          color: color,
+          borderRadius: BorderRadius.circular(8),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                leading,
+                gap,
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [title, subtitle],
+                ),
+              ],
+            ),
+            Column(
+              children: [
+                trailing,
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
