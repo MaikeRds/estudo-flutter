@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_iniciante/models/pessoa.dart';
-import 'package:flutter_iniciante/widgets/listview_builder.dart';
-import 'package:flutter_iniciante/widgets/meu_stateless_widget.dart';
-import 'package:flutter_iniciante/widgets/pessoa_list.dart';
+import 'package:flutter_iniciante/pages/home_page.dart';
+import 'package:flutter_iniciante/routes/router.dart';
+import 'package:flutter_iniciante/routes/routers.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,20 +13,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      initialRoute: Routers.initialRoute,
+      routes: routes,
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         textTheme: TextTheme(
-            bodyMedium: TextStyle(color: Colors.black),
-            titleMedium: TextStyle(color: Colors.white)
-        )
-      ),
-      home: Scaffold(
-        appBar: AppBar(title: Text("Meu Primeiro projeto")),
-        body: ListaPesssoas(),
+          bodyMedium: TextStyle(color: Colors.black),
+          titleMedium: TextStyle(color: Colors.white),
+        ),
       ),
     );
   }
 }
-
-
