@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_iniciante/models/pessoa.dart';
+import 'package:flutter_iniciante/widgets/listview_builder.dart';
+import 'package:flutter_iniciante/widgets/meu_stateless_widget.dart';
+import 'package:flutter_iniciante/widgets/pessoa_list.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +18,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const Scaffold(),
+      home: Scaffold(
+        appBar: AppBar(title: Text("Meu Primeiro projeto")),
+        body: ListaPesssoas(),
+      ),
     );
   }
 }
+
+
