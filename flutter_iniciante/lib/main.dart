@@ -17,6 +17,10 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        textTheme: TextTheme(
+            bodyMedium: TextStyle(color: Colors.black),
+            titleMedium: TextStyle(color: Colors.white)
+        )
       ),
       home: Scaffold(
         appBar: AppBar(title: Text("Meu Primeiro projeto")),

@@ -18,7 +18,10 @@ class CustomPersonTile extends StatelessWidget {
       subtitle: Text("Peso: ${pessoa.peso.paraPeso()}"),
       trailing: Text("Altura: ${pessoa.altura.paraAltura()}"),
       onTap: () {
-        showDialog(context: context, builder: (context) {
+        showDialog(
+            barrierDismissible: false,
+            context: context,
+            builder: (context) {
           return PessoaDialog(pessoa: pessoa);
         });
       },
